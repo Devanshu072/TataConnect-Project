@@ -1,0 +1,141 @@
+.login {
+  height: 100vh;
+  background-image: url('./../../assets/background_image.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+
+  .card {
+    width: 90%;
+    max-width: 800px;
+    display: flex;
+    background-color: white;
+    border-radius: 10px;
+    min-height: 600px;
+    overflow: hidden;
+    flex-direction: column;
+
+    .left, .right {
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      width: 100%;
+    }
+
+    .left {
+      flex: 1;
+      background: linear-gradient(rgba(56, 118, 216, 0.5), rgba(19, 85, 207, 0.5)),
+        url("https://images.pexels.com/photos/3228727/pexels-photo-3228727.jpeg?auto=compress&cs=tinysrgb&w=1600")
+          center;
+      background-size: cover;
+      color: white;
+      text-align: center;
+
+      h1 {
+        font-size: 2.5rem;
+        line-height: 1.2;
+        margin: 0;
+      }
+      
+      p, span {
+        font-size: 1rem;
+      }
+      
+      button {
+        width: 100%;
+        max-width: 200px;
+        padding: 10px;
+        border: none;
+        background-color: white;
+        color: rebeccapurple;
+        font-weight: bold;
+        cursor: pointer;
+        margin: 0 auto;
+      }
+    }
+
+    .right {
+      flex: 1;
+
+      h1 {
+        color: #555;
+        font-size: 2rem;
+      }
+      
+      form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        width: 100%;
+        
+        input {
+          width: 100%;
+          max-width: 300px;
+          border: none;
+          border-bottom: 1px solid lightgray;
+          padding: 10px 5px;
+          text-align: center;
+        }
+        
+        button {
+          width: 100%;
+          max-width: 200px;
+          padding: 10px;
+          border: none;
+          background-color: rgba(19, 85, 207, 0.5);
+          color: white;
+          font-weight: bold;
+          cursor: pointer;
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 600px) {
+  .login .card {
+    flex-direction: row;
+    justify-content: space-between;
+
+    .left, .right {
+      width: 50%;
+    }
+
+    .left button, .right form button {
+      width: 100%;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .login .card {
+    .left h1 {
+      font-size: 2.5rem;
+    }
+
+    .right h1 {
+      font-size: 2rem;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .login .card {
+    .left h1 {
+      font-size: 3rem;
+    }
+
+    .right h1 {
+      font-size: 2.5rem;
+    }
+  }
+}
