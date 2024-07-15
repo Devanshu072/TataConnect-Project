@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  api:
+    build:
+      context: ./api
+    ports:
+      - "8800:8800"
+    env_file:
+      - ./api/.env
+    volumes:
+      - upload:/app/public/upload  # Mount the shared volume to the API service
+    depends_on:
+      - client
+
+  client:
+    build:
+      context: ./client
+    ports:
+      - "3000:3000"
+    volumes:
+      - upload:/app/public/upload  # Mount the shared volume to the client service
+    environment:
+      - REACT_APP_API_URL=http://api:8800/api/  # Ensuring the client knows the API URL
+
+volumes:
+  upload:

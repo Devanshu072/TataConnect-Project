@@ -103,7 +103,7 @@ import Profile from "./pages/profile/Profile";
 import "./style.scss";
 import { useContext } from "react";
 import { DarkModeContext } from "./context/darkModeContext";
-import { AuthContext, AuthContextProvider } from "./context/authContext";
+import { AuthContext } from "./context/authContext";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 function App() {
@@ -165,11 +165,9 @@ function App() {
   ]);
 
   return (
-    <AuthContextProvider>
-      <div>
-        <RouterProvider router={router} />
-      </div>
-    </AuthContextProvider>
+    <div>
+      <RouterProvider router={router} />
+    </div>
   );
 }
 
